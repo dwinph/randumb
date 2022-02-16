@@ -92,7 +92,7 @@ module Randumb
         end
 
         # keep prior orders and append random
-        all_orders = (arel.orders + [order_clause])
+        all_orders = (arel.orders + [Arel.sql(order_clause)])
         # override all previous orders
         reorder(all_orders)
       end
